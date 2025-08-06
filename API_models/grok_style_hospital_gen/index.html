@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🎥 Grok-Style Hospital Scene Generator</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        textarea, input[type="submit"] {
+            width: 100%; padding: 10px; font-size: 16px; margin-top: 10px;
+        }
+        .output { background: #f4f4f4; padding: 15px; margin-top: 20px; border-radius: 8px; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <h2>🎬 Hospital Movie Scene Generator (Grok Style)</h2>
+    <form method="POST">
+        <label>Enter your hospital scene idea:</label><br>
+        <textarea name="prompt" rows="4" placeholder="e.g., A cyberattack shuts down ICU monitors during a storm..." required></textarea><br>
+        <input type="submit" value="Generate Scene">
+    </form>
+
+    {% if generated_text %}
+    <div class="output">
+        <h3>📝 Generated Scene:</h3>
+        <p>{{ generated_text }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
