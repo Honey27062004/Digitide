@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Creative Calculator</title>
+ <link rel="stylesheet" href=C:\Users\seema\OneDrive\Documents\python></head>
+<body>
+    <div class="calculator">
+        <h1>Creative Calculator</h1>
+        <form method="POST">
+            <input type="number" step="any" name="num1" placeholder="Enter first number" required>
+            <input type="number" step="any" name="num2" placeholder="Enter second number" required>
+
+            <select name="operation" required>
+                <option value="add">➕ Add</option>
+                <option value="subtract">➖ Subtract</option>
+                <option value="multiply">✖ Multiply</option>
+                <option value="divide">➗ Divide</option>
+                <option value="floor_division">🔽 Floor Division</option>
+                <option value="modulus">🧮 Modulus</option>
+            </select>
+
+            <button type="submit">Calculate</button>
+        </form>
+
+        {% if result != '' %}
+        <div class="result">
+            <h2>Result: {{ result }}</h2>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
