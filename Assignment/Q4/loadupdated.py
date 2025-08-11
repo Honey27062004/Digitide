@@ -6,7 +6,7 @@ import os
 import io
 import requests
 
-GROQ_API_KEY = "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"  # Replace with your actual key
+GROQ_API_KEY = "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"  
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 
 st.set_page_config(page_title="Multi-File Q&A", layout="centered")
@@ -78,4 +78,5 @@ if all_text:
                 st.markdown(f"**Answer:** {answer}")
             else:
                 st.error(f"API Error: {response.text}")
+
 
