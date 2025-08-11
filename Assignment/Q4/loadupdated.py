@@ -6,18 +6,13 @@ import os
 import io
 import requests
 
-# -----------------------
-# CONFIG
-# -----------------------
 GROQ_API_KEY = "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"  # Replace with your actual key
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 
 st.set_page_config(page_title="Multi-File Q&A", layout="centered")
 st.title("📄 Multi-File Upload & Q&A App")
 
-# -----------------------
-# File Processing Functions
-# -----------------------
+
 def read_pdf(file):
     reader = PyPDF2.PdfReader(file)
     text = ""
@@ -36,9 +31,7 @@ def read_csv(file):
     df = pd.read_csv(file)
     return df.to_string()
 
-# -----------------------
-# File Upload
-# -----------------------
+
 uploaded_files = st.file_uploader(
     "Upload PDF, TXT, DOCX, or CSV files", 
     type=["pdf", "txt", "docx", "csv"], 
@@ -59,9 +52,7 @@ if uploaded_files:
             all_text += read_csv(file)
     st.success("✅ Files processed successfully!")
 
-# -----------------------
-# Q&A Section
-# -----------------------
+
 if all_text:
     question = st.text_input("Ask a question about the uploaded files:")
 
@@ -87,3 +78,4 @@ if all_text:
                 st.markdown(f"**Answer:** {answer}")
             else:
                 st.error(f"API Error: {response.text}")
+
