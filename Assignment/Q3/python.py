@@ -3,7 +3,7 @@ from sentence_transformers import SentenceTransformer
 import faiss
 import numpy as np
 
-# 1. Your sample company policy text (can be much longer in reality)
+# 1. Your sample company policy text 
 policy_doc = """
 Refund Policy:
 We offer a full refund within 30 days of purchase if you are not satisfied with the product.
@@ -12,7 +12,7 @@ Refunds will be processed within 7 business days.
 Products must be returned in original condition.
 """
 
-# 2. Split into chunks (here, simple split by line breaks)
+# 2. Split into chunks 
 chunks = [chunk.strip() for chunk in policy_doc.strip().split('\n') if chunk]
 
 # 3. Load sentence embedding model
@@ -54,3 +54,4 @@ result = generator(
 )
 
 print(result[0]["generated_text"])
+
