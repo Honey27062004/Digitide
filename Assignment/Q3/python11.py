@@ -4,7 +4,7 @@ import faiss
 import numpy as np
 import requests
 
-# Your OpenRouter API key (replace here)
+# Your OpenRouter API key 
 OPENROUTER_API_KEY = "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"
 
 # Sample company policy
@@ -66,3 +66,4 @@ if question:
 
     st.subheader("Answer:")
     st.write(answer)
+
